@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travessia do Canal de Ilhabela 3,8 km</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <div class="banner"></div>
+      <div class="container text-center">
+        <h1>O Desafio das Águas Abertas: Muito Além da Linha de Chegada</h1>
+        <p class="subtitle">Esporte para todos: o desafio mental e físico da Travessia do Canal de Ilhabela 3,8&nbsp;km para atletas amadores.</p>
+      </div>
+
+    </header>
+    <section class="countdown">
+      <p class="countdown-date">📅 14 e 15 de novembro de 2026</p>
+      <div class="countdown-timer" role="timer">
+        <div class="countdown-item">
+          <span id="days">--</span>
+          <small>dias</small>
+        </div>
+        <div class="countdown-item">
+          <span id="hours">--</span>
+          <small>horas</small>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes">--</span>
+          <small>min</small>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds">--</span>
+          <small>seg</small>
+        </div>
+      </div>
+    </section>
+    <main class="container">
+            <p>
+        Enfrentar a imensidão do mar é um teste não apenas para o corpo, mas sobretudo para a mente.
+        Eventos anuais como a icônica <a href="https://www.canaldeilhabela.com.br/" target="_blank">Travessia do Canal de Ilhabela</a>
+        representam um marco na vida de quem decide trocar a segurança das piscinas
+        pela imprevisibilidade das correntes, dos ventos e das temperaturas do oceano.
+      </p>
+
+      <figure>
+        <img src="images/luis_travessia.jpeg" alt="Luis Henrique nadando em mar aberto durante a Travessia do Canal de Ilhabela">
+        <figcaption>A superação pessoal nas águas abertas transforma a mente e o corpo.</figcaption>
+      </figure>
+
+      <h2>Uma jornada de autoconhecimento</h2>
+      <p>
+        Para o atleta amador, completar uma prova dessas vai muito além de cruzar uma linha de chegada
+        ou buscar um lugar no pódio. Trata-se de uma jornada de autoconhecimento e superação de medos profundos.
+        O oceano ensina que não podemos controlar tudo ao nosso redor, mas podemos controlar nossa respiração,
+        nosso foco e a forma como reagimos às adversidades.
+      </p>
+
+      <h2>Disciplina: treinar para viver melhor</h2>
+      <p>
+        Essa conquista exige uma base sólida que começa meses antes do evento: a disciplina.
+        O compromisso de acordar de madrugada para treinar, a adequação da alimentação e o cuidado rigoroso
+        com a saúde física e mental constroem uma nova rotina. O objetivo deixa de ser apenas a prova
+        e passa a ser a qualidade de vida.
+      </p>
+      <blockquote>
+        Você não treina apenas para nadar melhor; você treina para viver melhor.
+      </blockquote>
+
+      <h2>Do mar para a vida</h2>
+      <p>O impacto dessa transformação transborda para todas as áreas da vida:</p>
+      <ul>
+        <li>
+          <strong>No ambiente de trabalho:</strong> a resiliência forjada na água fria se traduz em
+          inteligência emocional no escritório. O atleta amador aprende a lidar melhor com a pressão,
+          a manter o foco em metas de longo prazo e a contornar obstáculos imprevistos com a mesma calma
+          que usa para navegar em um mar agitado.
+        </li>
+        <li>
+          <strong>Na vida familiar:</strong> o ganho de energia e disposição muda a dinâmica em casa.
+          Além disso, a disciplina e o compromisso com a saúde tornam-se um exemplo silencioso e poderoso
+          para os filhos e parceiros, inspirando toda a família a adotar hábitos mais saudáveis.
+        </li>
+      </ul>
+
+      <h2>A verdadeira vitória</h2>
+      <p>
+        No fim das contas, a medalha no peito após atravessar o Canal de Ilhabela é apenas um símbolo.
+        A verdadeira vitória do atleta amador é a versão mais forte, equilibrada e saudável de si mesmo
+        que emerge da água quando o desafio termina.
+      </p>
+
+      <h2>Informações importantes</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>🎒 Retirada de kits</h3>
+          <p>Data, horário e local da retirada.</p>
+        </div>
+        <div class="card">
+          <h3>📋 Briefing</h3>
+          <p>Data, horário e local do briefing.</p>
+        </div>
+        <div class="card">
+          <h3>🥽 Acessórios permitidos</h3>
+          <p>O que o regulamento permite usar na prova.</p>
+        </div>
+      </div>
+
+      <h2>Local da prova</h2>
+      <iframe
+        class="map"
+        src="https://www.google.com/maps?q=Canal+de+S%C3%A3o+Sebasti%C3%A3o&output=embed"
+        title="Mapa do Canal de São Sebastião, entre Ilhabela e São Sebastião"
+        loading="lazy">
+      </iframe>
+      <h2>Fale com a gente</h2>
+      <form class="form">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" placeholder="Seu nome">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="voce@exemplo.com">
+
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="5" placeholder="Escreva sua dúvida"></textarea>
+
+        <button type="button" class="btn">Enviar</button>
+      </form>
+    </main>
+    <script>
+      // ⚠️ Confira o horário da largada no site oficial e ajuste aqui
+      const eventDate = new Date("2026-11-14T08:00:00-03:00");
+
+      function updateCountdown() {
+        const now = new Date();
+        const diff = eventDate - now;
+
+        if (diff <= 0) {
+          document.querySelector(".countdown-timer").textContent = "É hoje! Boa prova! 🏊";
+          clearInterval(timer);
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+        const minutes = Math.floor(diff / (1000 * 60)) % 60;
+        const seconds = Math.floor(diff / 1000) % 60;
+
+        document.getElementById("days").textContent = String(days).padStart(2, "0");
+        document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+      }
+
+      const timer = setInterval(updateCountdown, 1000);
+      updateCountdown();
+    </script>
+  </body>
+</html>
