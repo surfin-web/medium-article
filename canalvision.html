@@ -21,7 +21,7 @@
         </p>
         <div class="hero-actions">
           <a href="#origem" class="btn-light">Conheça o projeto ↓</a>
-          <a href="#time" class="btn-outline">Quero fazer parte</a>
+          <a href="#participar" class="btn-outline">Quero fazer parte</a>
         </div>
       </div>
     </header>
@@ -67,6 +67,19 @@
         </div>
 
         <p class="timeline-total">−112 minutos: <strong>57% mais rápido</strong> em três travessias.</p>
+
+        <figure>
+          <iframe
+            class="video"
+            src="https://www.youtube-nocookie.com/embed/yfyQMACoaNs"
+            title="Vídeo da minha travessia do Canal de Ilhabela em 2025"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+          <figcaption>Minha travessia de 2025: 1h42.</figcaption>
+        </figure>
 
         <p>
           Mas uma coisa não mudou: no mar aberto, a navegação ainda depende de levantar a cabeça
@@ -122,8 +135,8 @@
               <li><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> <strong>Mapas das provas:</strong> envie o arquivo GPX ou KML da organização e as boias aparecem no óculos.</li>
               <li><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i> <strong>Conexão com Garmin:</strong> seus treinos no histórico que você já usa.</li>
               <li><i class="fa-solid fa-brain" aria-hidden="true"></i> <strong>IA embarcada:</strong> braçadas, respiração e GPS inteligente.</li>
+              <li><i class="fa-solid fa-life-ring" aria-hidden="true"></i> <strong>SOS (em estudo):</strong> três toques enviam sua posição para o caiaque de apoio.</li>
             </ul>
-            <li><i class="fa-solid fa-life-ring" aria-hidden="true"></i> <strong>SOS (em estudo):</strong> três toques enviam sua posição para o caiaque de apoio.</li>
           </div>
 
           <div class="lens" role="img" aria-label="Simulação da tela do CanalVision: seguir em frente, 350 metros até a boia 2, ritmo de 1 minuto e 42 segundos por 100 metros">
@@ -174,7 +187,7 @@
         </ol>
       </section>
 
-            <section id="hardware">
+      <section id="hardware">
         <h2>Hardware do protótipo</h2>
         <p>
           O primeiro protótipo usa módulos prontos e baratos, para validar a navegação rápido.
@@ -218,7 +231,6 @@
                 <td>US$ 3–8</td>
               </tr>
               <tr>
-              <tr>
                 <td>SOS</td>
                 <td>Rádio LoRa SX1262 (915 MHz)</td>
                 <td>Alcance de quilômetros sobre a água, sem depender do celular</td>
@@ -230,6 +242,7 @@
                 <td>Posição e estado a cada ~30 s para a organização</td>
                 <td>incluído</td>
               </tr>
+              <tr>
                 <td>Energia</td>
                 <td>LiPo 200–300 mAh</td>
                 <td>Leve, com carga pela própria placa</td>
@@ -239,7 +252,7 @@
           </table>
         </div>
 
-        <p class="table-note">* Estimativas de referência em dólar, sem frete e impostos. Total do P0: cerca de US$ 60–100.</p>
+        <p class="table-note">* Estimativas de referência em dólar, sem frete e impostos. Total do P0: cerca de US$ 70–120.</p>
       </section>
 
       <section id="organizadores">
@@ -338,7 +351,7 @@
         </div>
       </section>
 
-            <section id="mercado">
+      <section id="mercado">
         <h2>Referência de mercado</h2>
         <p>Óculos inteligentes para natação já existem, o que prova a demanda. Estas são as metas do CanalVision diante da referência da categoria:</p>
         <div class="table-wrapper">
@@ -492,7 +505,7 @@
           <summary>Como funciona o SOS?</summary>
           <p>Três toques na cápsula, ou a detecção automática de um nadador parado, enviam a posição por rádio LoRa para uma base no caiaque ou no barco de apoio. É um recurso em estudo e não substitui a equipe de segurança da prova.</p>
         </details>
-                <details>
+        <details>
           <summary>O CanalVision substitui o chip de cronometragem?</summary>
           <p>Não. O chip oficial continua registrando a largada e a chegada. O CanalVision complementa com a posição durante a prova e o SOS, integrado à cronometragem por API, em parceria com a empresa responsável.</p>
         </details>
@@ -519,8 +532,47 @@
         <div class="promo">
           <h2 class="promo-title">Vamos atravessar juntos?</h2>
           <p class="promo-text">Se você nada, programa ou desenha e quer participar, me chama.</p>
-          <a href="mailto:luisponciano@gmail.com?subject=Quero%20participar%20do%20CanalVision" class="btn-light">Quero participar →</a>
+          <a href="#participar" class="btn-light">Quero participar ↓</a>
         </div>
+
+        <p id="obrigado" class="form-success">Obrigado! Recebi sua mensagem e vou responder em breve.</p>
+
+        <form class="form form-card" id="participar" action="https://formsubmit.co/luisponciano@gmail.com" method="POST">
+          <h3>Quero participar do CanalVision</h3>
+
+          <input type="hidden" name="_subject" value="Novo interessado no CanalVision">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://surfin-web.github.io/medium-article/canalvision.html#obrigado">
+
+          <label for="name">Nome</label>
+          <input type="text" id="name" name="nome" placeholder="Seu nome" required>
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+
+          <label for="area">Como você quer contribuir?</label>
+          <select id="area" name="area" required>
+            <option value="">Escolha uma área</option>
+            <option>Hardware e firmware</option>
+            <option>App e back-end</option>
+            <option>IA e dados</option>
+            <option>Design de produto</option>
+            <option>Testes em águas abertas</option>
+          </select>
+
+          <label for="message">Conte um pouco sobre você</label>
+          <textarea id="message" name="mensagem" rows="5" placeholder="Experiência, disponibilidade, ideias..."></textarea>
+
+          <label class="form-check">
+            <input type="checkbox" name="consentimento" value="sim" required>
+            Concordo em ser contatado sobre o projeto CanalVision.
+          </label>
+
+          <input type="text" name="_honey" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <button type="submit" class="btn">Enviar</button>
+          <p class="form-note">Os dados são enviados pelo serviço FormSubmit e usados só para contato sobre o projeto.</p>
+        </form>
       </section>
     </main>
 
