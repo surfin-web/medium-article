@@ -123,6 +123,7 @@
               <li><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i> <strong>Conexão com Garmin:</strong> seus treinos no histórico que você já usa.</li>
               <li><i class="fa-solid fa-brain" aria-hidden="true"></i> <strong>IA embarcada:</strong> braçadas, respiração e GPS inteligente.</li>
             </ul>
+            <li><i class="fa-solid fa-life-ring" aria-hidden="true"></i> <strong>SOS (em estudo):</strong> três toques enviam sua posição para o caiaque de apoio.</li>
           </div>
 
           <div class="lens" role="img" aria-label="Simulação da tela do CanalVision: seguir em frente, 350 metros até a boia 2, ritmo de 1 minuto e 42 segundos por 100 metros">
@@ -153,7 +154,7 @@
           <li class="flow-step">
             <i class="fa-solid fa-glasses" aria-hidden="true"></i>
             <h3>Lente</h3>
-            <p>Seta, distância e ritmo no campo de visão</p>
+            <p>Seta, distância e ritmo no campo de visão. Alerta SOS por rádio LoRa.</p>
           </li>
         </ol>
 
@@ -217,6 +218,12 @@
                 <td>US$ 3–8</td>
               </tr>
               <tr>
+              <tr>
+                <td>SOS</td>
+                <td>Rádio LoRa SX1262 (915 MHz)</td>
+                <td>Alcance de quilômetros sobre a água, sem depender do celular</td>
+                <td>US$ 10–20</td>
+              </tr>
                 <td>Energia</td>
                 <td>LiPo 200–300 mAh</td>
                 <td>Leve, com carga pela própria placa</td>
@@ -324,6 +331,10 @@
             <h3><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Sem botões</h3>
             <p>Comandos por toques na cápsula, lidos pelo acelerômetro. Menos pontos de vazamento.</p>
           </div>
+          <div class="card card-accent card-alert">
+            <h3><i class="fa-solid fa-life-ring" aria-hidden="true"></i> SOS</h3>
+            <p>LED de alta visibilidade e alerta na lente quando o pedido de ajuda é enviado.</p>
+          </div>
         </div>
       </section>
 
@@ -344,7 +355,7 @@
           </li>
           <li>
             <h3>P3 · Mar</h3>
-            <p>GPS em águas abertas, com caiaque de apoio.</p>
+            <p>GPS em águas abertas e primeiros testes do SOS por rádio, com caiaque de apoio.</p>
           </li>
           <li>
             <h3>P4 · Óculos</h3>
@@ -370,6 +381,10 @@
         <details>
           <summary>Posso comprar o CanalVision?</summary>
           <p>Ainda não. É um projeto conceitual de estudo em AI Engineering, em fase de protótipo.</p>
+        </details>
+        <details>
+          <summary>Como funciona o SOS?</summary>
+          <p>Três toques na cápsula, ou a detecção automática de um nadador parado, enviam a posição por rádio LoRa para uma base no caiaque ou no barco de apoio. É um recurso em estudo e não substitui a equipe de segurança da prova.</p>
         </details>
       </section>
 
