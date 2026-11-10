@@ -192,6 +192,51 @@ blockquote {
   font-style: italic;
 }
 
+/* Tabela */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 30px 0 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+}
+
+.table caption {
+  padding: 15px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table thead th {
+  background: #0a1f44;
+  color: white;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #f5f9fc;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table-note {
+  font-size: 14px;
+  color: #757575;
+}
 /* =========================================
    ARTIGO (index.html)
    ========================================= */
@@ -403,6 +448,282 @@ blockquote {
   color: #01579b;
 }
 
+/* 18. Layout dividido (reutilizável) */
+.split {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.split > * {
+  flex: 1;
+}
+
+/* 19. Lista de funções */
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.feature-list i {
+  width: 24px;
+  color: #e65100;
+}
+
+/* 20. Mockup da lente */
+.lens {
+  aspect-ratio: 1 / 1;
+  max-width: 320px;
+  margin: 0 auto;
+  border: 14px solid #1a1a1a;
+  border-radius: 45% 45% 50% 50%;
+  background: radial-gradient(circle at 30% 30%, #81d4fa, #0277bd 55%, #0a1f44);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hud {
+  padding: 15px 25px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #76ff03;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+.hud-arrow {
+  font-size: 56px;
+}
+
+.hud-distance {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.hud-info {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* 21. Diagrama de arquitetura */
+.flow {
+  display: flex;
+  gap: 40px;
+  margin: 30px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.flow-step {
+  flex: 1;
+  position: relative;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  text-align: center;
+}
+
+.flow-step i {
+  font-size: 32px;
+  color: #0277bd;
+}
+
+.flow-step h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.flow-step p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.flow-step-highlight {
+  border: 2px solid #e65100;
+}
+
+.flow-step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -32px;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #e65100;
+}
+
+.flow-two-way .flow-step:not(:last-child)::after {
+  content: "⇄";
+}
+
+.flow-link {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: #757575;
+}
+
+/* 22. Mockup do celular */
+.phone {
+  width: 240px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 10px solid #1a1a1a;
+  border-radius: 32px;
+  background: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.phone-header {
+  padding: 12px;
+  background: #0a1f44;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.phone-map {
+  position: relative;
+  height: 220px;
+  background: linear-gradient(160deg, #b3e5fc, #4fc3f7);
+}
+
+.buoy,
+.swimmer {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.buoy {
+  background: #e65100;
+}
+
+.swimmer {
+  background: #76ff03;
+}
+
+.phone-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.phone-stats strong {
+  display: block;
+  font-size: 18px;
+}
+
+/* 23. Roadmap */
+.roadmap {
+  margin: 30px 0 30px 10px;
+  padding-left: 0;
+  list-style: none;
+  border-left: 3px solid #e1f5fe;
+}
+
+.roadmap li {
+  position: relative;
+  padding: 0 0 25px 25px;
+}
+
+.roadmap li::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -11px;
+  width: 13px;
+  height: 13px;
+  border: 3px solid #0277bd;
+  border-radius: 50%;
+  background: white;
+}
+
+.roadmap .is-next::before {
+  border-color: #e65100;
+  background: #e65100;
+}
+
+.roadmap h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.roadmap p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #bf360c;
+  color: white;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+/* 24. Perguntas frequentes */
+.faq details {
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.faq details p {
+  margin: 10px 0 0;
+  font-size: 16px;
+}
+
+/* 25. Rodapé */
+.footer {
+  padding: 30px 20px;
+  border-top: 1px solid #e0e0e0;
+  color: #757575;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hud-arrow {
+    animation: steer 3s ease-in-out infinite;
+  }
+}
+
+@keyframes steer {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-15deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .bar-fill {
     animation: grow 1.5s ease-out;
@@ -433,6 +754,27 @@ blockquote {
 @media (max-width: 768px) {
   .container {
     width: 540px;
+  }
+
+  .split {
+    flex-direction: column;
+  }
+
+    .flow {
+    flex-direction: column;
+  }
+
+  .flow-step:not(:last-child)::after {
+    content: "↓";
+    top: auto;
+    right: auto;
+    bottom: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .flow-two-way .flow-step:not(:last-child)::after {
+    content: "⇅";
   }
 
   .cards {

@@ -112,10 +112,296 @@
         </div>
       </section>
 
+      <section id="solucao">
+        <h2>A solução</h2>
+        <div class="split">
+          <div>
+            <p>O CanalVision mostra, direto na lente, para onde nadar. Sem levantar a cabeça para procurar a boia, sem parar para olhar o relógio.</p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-location-arrow" aria-hidden="true"></i> <strong>Correção de rota:</strong> seta e cores mostram o desvio em tempo real.</li>
+              <li><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> <strong>Mapas das provas:</strong> envie o arquivo GPX ou KML da organização e as boias aparecem no óculos.</li>
+              <li><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i> <strong>Conexão com Garmin:</strong> seus treinos no histórico que você já usa.</li>
+              <li><i class="fa-solid fa-brain" aria-hidden="true"></i> <strong>IA embarcada:</strong> braçadas, respiração e GPS inteligente.</li>
+            </ul>
+          </div>
+
+          <div class="lens" role="img" aria-label="Simulação da tela do CanalVision: seguir em frente, 350 metros até a boia 2, ritmo de 1 minuto e 42 segundos por 100 metros">
+            <div class="hud">
+              <i class="fa-solid fa-arrow-up hud-arrow"></i>
+              <p class="hud-distance">350 m</p>
+              <p class="hud-info">1:42/100m · Boia 2</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="arquitetura">
+        <h2>Como funciona</h2>
+        <p>Dentro do óculos, tudo acontece em tempo real, sem depender do celular. O app entra antes e depois do treino.</p>
+
+        <ol class="flow">
+          <li class="flow-step">
+            <i class="fa-solid fa-satellite-dish" aria-hidden="true"></i>
+            <h3>Sensores</h3>
+            <p>GPS, bússola, acelerômetro e giroscópio</p>
+          </li>
+          <li class="flow-step flow-step-highlight">
+            <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+            <h3>Processamento</h3>
+            <p>ESP32-S3 com IA embarcada (TinyML)</p>
+          </li>
+          <li class="flow-step">
+            <i class="fa-solid fa-glasses" aria-hidden="true"></i>
+            <h3>Lente</h3>
+            <p>Seta, distância e ritmo no campo de visão</p>
+          </li>
+        </ol>
+
+        <p class="flow-link"><i class="fa-brands fa-bluetooth-b" aria-hidden="true"></i> Bluetooth LE</p>
+
+        <ol class="flow flow-two-way">
+          <li class="flow-step">
+            <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+            <h3>App CanalVision</h3>
+            <p>Mapas das provas (GPX/KML), histórico e análise com IA</p>
+          </li>
+          <li class="flow-step">
+            <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+            <h3>Garmin Connect</h3>
+            <p>Exportação dos treinos em arquivo .FIT</p>
+          </li>
+        </ol>
+      </section>
+
+            <section id="hardware">
+        <h2>Hardware do protótipo</h2>
+        <p>
+          O primeiro protótipo usa módulos prontos e baratos, para validar a navegação rápido.
+          A versão de produto migra para componentes de menor consumo.
+        </p>
+
+        <div class="table-wrapper">
+          <table class="table">
+            <caption>Componentes do protótipo P0</caption>
+            <thead>
+              <tr>
+                <th scope="col">Função</th>
+                <th scope="col">Componente</th>
+                <th scope="col">Por que este</th>
+                <th scope="col">Faixa de preço*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Processamento</td>
+                <td>Seeed XIAO ESP32-S3</td>
+                <td>Minúsculo, Bluetooth LE e instruções para IA</td>
+                <td>US$ 7–15</td>
+              </tr>
+              <tr>
+                <td>GPS</td>
+                <td>u-blox MAX-M10S</td>
+                <td>Baixo consumo e sinal rápido a cada respiração</td>
+                <td>US$ 20–40</td>
+              </tr>
+              <tr>
+                <td>Orientação</td>
+                <td>BNO085 (9 eixos)</td>
+                <td>Bússola e movimento com a fusão dos sensores pronta</td>
+                <td>US$ 20–30</td>
+              </tr>
+              <tr>
+                <td>Display</td>
+                <td>OLED 128×64 (SSD1306)</td>
+                <td>Alto contraste, mesma resolução da categoria</td>
+                <td>US$ 3–8</td>
+              </tr>
+              <tr>
+                <td>Energia</td>
+                <td>LiPo 200–300 mAh</td>
+                <td>Leve, com carga pela própria placa</td>
+                <td>US$ 5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="table-note">* Estimativas de referência em dólar, sem frete e impostos. Total do P0: cerca de US$ 60–100.</p>
+      </section>
+
+            <section id="mercado">
+        <h2>Referência de mercado</h2>
+        <p>Óculos inteligentes para natação já existem, o que prova a demanda. Estas são as metas do CanalVision diante da referência da categoria:</p>
+        <div class="table-wrapper">
+          <table class="table">
+            <caption>Metas do CanalVision x referência da categoria</caption>
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Referência da categoria</th>
+                <th scope="col">Meta CanalVision</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Peso</td>
+                <td>~73 g</td>
+                <td>Abaixo de 80 g</td>
+              </tr>
+              <tr>
+                <td>Tela</td>
+                <td>128×64</td>
+                <td>OLED 128×64 com seta de alto contraste</td>
+              </tr>
+              <tr>
+                <td>Autonomia com GPS</td>
+                <td>~5 h</td>
+                <td>2 h no protótipo, 5 h no produto</td>
+              </tr>
+              <tr>
+                <td>Vedação</td>
+                <td>IP68</td>
+                <td>IP68 no produto</td>
+              </tr>
+              <tr>
+                <td>Rotas</td>
+                <td>Planejadas no app</td>
+                <td>Upload do mapa oficial da prova (GPX/KML)</td>
+              </tr>
+              <tr>
+                <td>Integração</td>
+                <td>App próprio</td>
+                <td>Exportação para o Garmin Connect (.FIT)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Referência: especificações publicadas por fabricantes da categoria, consultadas em novembro de 2026.</p>
+      </section>
+
+      <section id="app">
+        <h2>O app</h2>
+        <div class="split">
+          <div>
+            <p>Antes da prova, o atleta envia o mapa oficial com as boias. Depois, recebe a análise do treino.</p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-file-import" aria-hidden="true"></i> <strong>Importar rota:</strong> arquivo GPX ou KML da organização.</li>
+              <li><i class="fa-solid fa-route" aria-hidden="true"></i> <strong>Revisar o percurso:</strong> boias numeradas no mapa.</li>
+              <li><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <strong>Análise com IA:</strong> ritmo por trecho, desvios e braçadas.</li>
+              <li><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i> <strong>Garmin Connect:</strong> exportação do treino em .FIT.</li>
+            </ul>
+          </div>
+
+          <div class="phone" role="img" aria-label="Simulação do app CanalVision: mapa da Travessia de Ilhabela com três boias, distância de 3,8 quilômetros e ritmo de 1 minuto e 42 segundos por 100 metros">
+            <div class="phone-header">Travessia Ilhabela · 3,8&nbsp;km</div>
+            <div class="phone-map">
+              <span class="buoy" style="top: 75%; left: 15%"></span>
+              <span class="buoy" style="top: 45%; left: 45%"></span>
+              <span class="buoy" style="top: 18%; left: 78%"></span>
+              <span class="swimmer" style="top: 58%; left: 32%"></span>
+            </div>
+            <div class="phone-stats">
+              <div><strong>3,8 km</strong>distância</div>
+              <div><strong>1:42</strong>/100 m</div>
+              <div><strong>3</strong>boias</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="design">
+        <h2>Design</h2>
+        <div class="cards">
+          <div class="card card-accent">
+            <h3><i class="fa-solid fa-eye" aria-hidden="true"></i> Monocular</h3>
+            <p>Display só no olho direito: mais leve, e o outro olho fica com a visão livre.</p>
+          </div>
+          <div class="card card-accent">
+            <h3><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Peso equilibrado</h3>
+            <p>Bateria e GPS na cápsula traseira: equilibra o peso e a antena sai da água a cada respiração.</p>
+          </div>
+          <div class="card card-accent">
+            <h3><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Sem botões</h3>
+            <p>Comandos por toques na cápsula, lidos pelo acelerômetro. Menos pontos de vazamento.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="roadmap">
+        <h2>Roadmap</h2>
+        <ol class="roadmap">
+          <li class="is-next">
+            <h3>P0 · Bancada <span class="tag">Próximo passo</span></h3>
+            <p>ESP32-S3, GPS, bússola e OLED: a seta apontando para um ponto do mapa.</p>
+          </li>
+          <li>
+            <h3>P1 · Seco</h3>
+            <p>Teste caminhando num parque, com boias virtuais.</p>
+          </li>
+          <li>
+            <h3>P2 · Piscina</h3>
+            <p>Primeira vedação e coleta de dados para treinar o modelo de braçadas.</p>
+          </li>
+          <li>
+            <h3>P3 · Mar</h3>
+            <p>GPS em águas abertas, com caiaque de apoio.</p>
+          </li>
+          <li>
+            <h3>P4 · Óculos</h3>
+            <p>Display na lente, formato final, app e exportação para o Garmin Connect.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>Perguntas frequentes</h2>
+        <details>
+          <summary>Já existe algo parecido?</summary>
+          <p>Sim, e isso mostra que há demanda. O CanalVision foca no amador brasileiro: mapas oficiais das provas, correção de rota visual e integração com a Garmin.</p>
+        </details>
+        <details>
+          <summary>GPS funciona embaixo d'água?</summary>
+          <p>Não. Por isso o GPS fica na cabeça e lê o sinal a cada respiração. Entre uma leitura e outra, a posição é estimada pelos sensores de movimento.</p>
+        </details>
+        <details>
+          <summary>Por que começar com ESP32-S3?</summary>
+          <p>É barato, tem enorme comunidade e roda modelos de IA pequenos. Ideal para validar rápido. O produto final migra para um chip de menor consumo.</p>
+        </details>
+        <details>
+          <summary>Posso comprar o CanalVision?</summary>
+          <p>Ainda não. É um projeto conceitual de estudo em AI Engineering, em fase de protótipo.</p>
+        </details>
+      </section>
+
       <section id="time">
         <h2>Junte-se ao time</h2>
-        <p>Em construção.</p>
+        <p>Procuro pessoas que queiram <strong>construir o CanalVision comigo</strong>:</p>
+        <div class="cards">
+          <div class="card">
+            <h3><i class="fa-solid fa-microchip" aria-hidden="true"></i> Hardware e firmware</h3>
+            <p>Eletrônica, PCB e programação embarcada.</p>
+          </div>
+          <div class="card">
+            <h3><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> App e back-end</h3>
+            <p>Flutter, Bluetooth LE e Ruby on Rails.</p>
+          </div>
+          <div class="card">
+            <h3><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i> Design de produto</h3>
+            <p>Design industrial e interface na lente.</p>
+          </div>
+        </div>
+
+        <div class="promo">
+          <h2 class="promo-title">Vamos atravessar juntos?</h2>
+          <p class="promo-text">Se você nada, programa ou desenha e quer participar, me chama.</p>
+          <a href="mailto:luisponciano@gmail.com?subject=Quero%20participar%20do%20CanalVision" class="btn-light">Quero participar →</a>
+        </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <p>CanalVision é um projeto conceitual de estudo em AI Engineering, criado por Luis Henrique Ponciano. Não é um produto à venda.</p>
+      <p>Garmin e Garmin Connect são marcas de seus respectivos donos.</p>
+    </footer>
   </body>
 </html>
