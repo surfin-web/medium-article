@@ -245,6 +245,23 @@ blockquote {
   font-size: 14px;
   color: #757575;
 }
+
+/* Código */
+code {
+  font-family: Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.code-block {
+  margin: 10px 0 30px;
+  padding: 20px;
+  overflow-x: auto;
+  border-radius: 12px;
+  background: #0a1f44;
+  color: #e1f5fe;
+  font-size: 14px;
+  line-height: 1.5;
+}
 /* =========================================
    ARTIGO (index.html)
    ========================================= */

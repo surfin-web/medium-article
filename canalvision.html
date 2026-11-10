@@ -224,6 +224,12 @@
                 <td>Alcance de quilômetros sobre a água, sem depender do celular</td>
                 <td>US$ 10–20</td>
               </tr>
+              <tr>
+                <td>Telemetria</td>
+                <td>O mesmo rádio LoRa SX1262</td>
+                <td>Posição e estado a cada ~30 s para a organização</td>
+                <td>incluído</td>
+              </tr>
                 <td>Energia</td>
                 <td>LiPo 200–300 mAh</td>
                 <td>Leve, com carga pela própria placa</td>
@@ -234,6 +240,102 @@
         </div>
 
         <p class="table-note">* Estimativas de referência em dólar, sem frete e impostos. Total do P0: cerca de US$ 60–100.</p>
+      </section>
+
+      <section id="organizadores">
+        <h2>Para organizadores de provas</h2>
+        <p>
+          O chip de cronometragem registra a largada e a chegada. O CanalVision mostra o que acontece no meio:
+          a posição de cada atleta ao vivo e um alerta imediato de SOS para a equipe de segurança.
+        </p>
+
+        <ol class="flow">
+          <li class="flow-step">
+            <i class="fa-solid fa-glasses" aria-hidden="true"></i>
+            <h3>Óculos</h3>
+            <p>Posição, estado e SOS a cada ~30 s</p>
+          </li>
+          <li class="flow-step">
+            <i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i>
+            <h3>Gateways LoRa</h3>
+            <p>Nos barcos de apoio e na costa</p>
+          </li>
+          <li class="flow-step flow-step-highlight">
+            <i class="fa-solid fa-server" aria-hidden="true"></i>
+            <h3>API CanalVision</h3>
+            <p>Ruby on Rails + PostgreSQL</p>
+          </li>
+          <li class="flow-step">
+            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+            <h3>Painel ao vivo</h3>
+            <p>Mapa, alertas e resultados</p>
+          </li>
+        </ol>
+
+        <div class="table-wrapper">
+          <table class="table">
+            <caption>API de telemetria (proposta)</caption>
+            <thead>
+              <tr>
+                <th scope="col">Direção</th>
+                <th scope="col">Endpoint</th>
+                <th scope="col">Para quê</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Entrada</td>
+                <td><code>PUT /races/:id/route</code></td>
+                <td>Percurso oficial com as boias (GPX/KML)</td>
+              </tr>
+              <tr>
+                <td>Entrada</td>
+                <td><code>POST /races/:id/athletes</code></td>
+                <td>Número de peito ligado a cada óculos</td>
+              </tr>
+              <tr>
+                <td>Entrada</td>
+                <td><code>POST /races/:id/start</code></td>
+                <td>Hora oficial da largada, vinda da cronometragem</td>
+              </tr>
+              <tr>
+                <td>Saída</td>
+                <td><code>GET /races/:id/positions</code></td>
+                <td>Posição de todos os atletas ao vivo</td>
+              </tr>
+              <tr>
+                <td>Saída</td>
+                <td>Webhook <code>sos.triggered</code></td>
+                <td>Alerta imediato para a equipe de segurança</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Exemplo de alerta enviado pela API:</p>
+<pre class="code-block"><code>{
+  "event": "sos.triggered",
+  "race_id": "ilhabela-2026",
+  "bib": 1234,
+  "position": { "lat": -23.7781, "lon": -45.3581 },
+  "battery": 82,
+  "timestamp": "2026-11-14T09:47:12-03:00"
+}</code></pre>
+
+        <div class="cards">
+          <div class="card card-accent">
+            <h3><i class="fa-solid fa-handshake" aria-hidden="true"></i> Locação por prova</h3>
+            <p>Frota de óculos entregue com o kit do atleta.</p>
+          </div>
+          <div class="card card-accent card-alert">
+            <h3><i class="fa-solid fa-life-ring" aria-hidden="true"></i> Painel de segurança</h3>
+            <p>Mapa ao vivo e alertas de SOS para a equipe de resgate.</p>
+          </div>
+          <div class="card card-accent">
+            <h3><i class="fa-solid fa-plug" aria-hidden="true"></i> Integração por API</h3>
+            <p>Parceria com a cronometragem oficial, sem substituir o chip da prova.</p>
+          </div>
+        </div>
       </section>
 
             <section id="mercado">
@@ -361,6 +463,10 @@
             <h3>P4 · Óculos</h3>
             <p>Display na lente, formato final, app e exportação para o Garmin Connect.</p>
           </li>
+          <li>
+            <h3>P5 · Piloto com organizadores</h3>
+            <p>Gateways LoRa, painel ao vivo e API integrada à cronometragem numa prova-teste.</p>
+          </li>
         </ol>
       </section>
 
@@ -385,6 +491,10 @@
         <details>
           <summary>Como funciona o SOS?</summary>
           <p>Três toques na cápsula, ou a detecção automática de um nadador parado, enviam a posição por rádio LoRa para uma base no caiaque ou no barco de apoio. É um recurso em estudo e não substitui a equipe de segurança da prova.</p>
+        </details>
+                <details>
+          <summary>O CanalVision substitui o chip de cronometragem?</summary>
+          <p>Não. O chip oficial continua registrando a largada e a chegada. O CanalVision complementa com a posição durante a prova e o SOS, integrado à cronometragem por API, em parceria com a empresa responsável.</p>
         </details>
       </section>
 
