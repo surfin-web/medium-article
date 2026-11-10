@@ -1,3 +1,7 @@
+/* =========================================
+   BASE
+   ========================================= */
+
 /* 1. Fontes */
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
 
@@ -9,6 +13,12 @@ body {
   font-family: 'Lora', serif;
   font-size: 20px;
   line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* 3. Títulos */
@@ -34,29 +44,7 @@ h2 {
   margin-top: 0;
 }
 
-/* 4. Utilitários */
-.text-center {
-  text-align: center;
-}
-
-/* 5. Banner */
-.banner {
-  background-image: url("images/banner_travessia_canal_ilhabela.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: black;
-  height: 40vw;
-  max-height: 400px;
-}
-
-/* 6. Container */
-.container {
-  width: 800px;
-  margin: 50px auto;
-}
-
-/* 7. Links */
+/* 4. Links */
 a {
   color: inherit;
   text-decoration: none;
@@ -67,7 +55,83 @@ a:hover {
   background-image: linear-gradient(transparent 70%, #4fc3f7 70%);
 }
 
-/* 8. Cards */
+/* 5. Utilitários */
+.text-center {
+  text-align: center;
+}
+
+/* 6. Container */
+.container {
+  width: 800px;
+  margin: 50px auto;
+}
+
+/* =========================================
+   COMPONENTES REUTILIZÁVEIS
+   ========================================= */
+
+/* 7. Botões */
+.btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #0277bd;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #01579b;
+}
+
+.btn-light {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 8px;
+  background: white;
+  color: #01579b;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.btn-light:hover {
+  background: #e1f5fe;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 10px 28px;
+  border: 2px solid white;
+  border-radius: 8px;
+  background: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 8. Selo */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* 9. Cards */
 .cards {
   display: flex;
   gap: 20px;
@@ -87,63 +151,62 @@ a:hover {
   margin-top: 0;
 }
 
+.card h3 i {
+  color: #0277bd;
+  margin-right: 6px;
+}
+
 .card p {
   font-size: 16px;
   margin-bottom: 0;
 }
 
-/* 9. Mapa */
-.map {
-  width: 100%;
-  height: 400px;
-  border: 0;
-  border-radius: 8px;
+.card-accent {
+  border-top: 4px solid #0277bd;
 }
 
-/* 10. Formulário */
-.form label {
-  display: block;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  margin-top: 20px;
-  margin-bottom: 5px;
+/* 10. Figura e citação */
+figure {
+  margin: 40px 0;
 }
 
-.form input,
-.form textarea {
+figure img {
   display: block;
   width: 100%;
-  box-sizing: border-box;
-  padding: 12px;
-  border: 1px solid #ccc;
   border-radius: 8px;
-  font-family: inherit;
+}
+
+figcaption {
+  margin-top: 10px;
   font-size: 16px;
+  font-style: italic;
+  color: #757575;
+  text-align: center;
 }
 
-.form input:focus,
-.form textarea:focus {
-  outline: 2px solid #4fc3f7;
-  border-color: #4fc3f7;
+blockquote {
+  margin: 30px 0;
+  padding-left: 20px;
+  border-left: 4px solid #4fc3f7;
+  font-size: 26px;
+  font-style: italic;
 }
 
-.btn {
-  margin-top: 20px;
-  padding: 12px 30px;
-  background: #0277bd;
-  color: white;
-  border: 0;
-  border-radius: 8px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  cursor: pointer;
+/* =========================================
+   ARTIGO (index.html)
+   ========================================= */
+
+/* 11. Banner */
+.banner {
+  background-image: url("images/banner_travessia_canal_ilhabela.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+  height: 40vw;
+  max-height: 400px;
 }
 
-.btn:hover {
-  background: #01579b;
-}
 /* 12. Contagem regressiva */
 .countdown {
   background: #01579b;
@@ -185,7 +248,176 @@ a:hover {
   font-size: 14px;
   text-transform: uppercase;
 }
-/* 11. Media queries (SEMPRE no final!) */
+
+/* 13. Mapa */
+.map {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* 14. Formulário */
+.form label {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.form input,
+.form textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: 2px solid #4fc3f7;
+  border-color: #4fc3f7;
+}
+
+/* 15. Promo CanalVision */
+.promo {
+  margin: 50px 0;
+  padding: 40px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #01579b, #0a1f44);
+  color: white;
+}
+
+.promo-title {
+  margin: 20px 0 10px;
+  font-size: 36px;
+  color: white;
+}
+
+.promo-text {
+  margin: 0 0 25px;
+  font-size: 18px;
+}
+
+/* =========================================
+   CANALVISION (canalvision.html)
+   ========================================= */
+
+/* 16. Hero */
+.hero {
+  background: linear-gradient(135deg, #01579b, #0a1f44);
+  color: white;
+  padding: 40px 0 80px;
+}
+
+.hero .container {
+  margin: 0 auto;
+}
+
+.back-link {
+  display: block;
+  width: fit-content;
+  margin-bottom: 40px;
+  font-size: 16px;
+  background: none;
+}
+
+.back-link:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+.hero-title {
+  margin: 20px 0 10px;
+  font-size: 64px;
+  color: white;
+}
+
+.hero-tagline {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+}
+
+.hero-story {
+  margin: 30px 0;
+  padding-left: 20px;
+  border-left: 4px solid #4fc3f7;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* 17. Linha do tempo */
+.timeline {
+  margin: 30px 0;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.bar {
+  height: 14px;
+  background: #e1f5fe;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #0277bd;
+  border-radius: 999px;
+}
+
+.bar-goal {
+  background: repeating-linear-gradient(
+    45deg,
+    #4fc3f7 0 8px,
+    #81d4fa 8px 16px
+  );
+}
+
+.timeline-total {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  color: #01579b;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bar-fill {
+    animation: grow 1.5s ease-out;
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+}
+
+/* =========================================
+   18. MEDIA QUERIES (SEMPRE NO FINAL!)
+   ========================================= */
 @media (max-width: 1200px) {
   .container {
     width: 750px;
@@ -213,30 +445,8 @@ a:hover {
     width: auto;
     padding: 0 20px;
   }
-}
-/* 12. Figura e citação */
-figure {
-  margin: 40px 0;
-}
 
-figure img {
-  display: block;
-  width: 100%;
-  border-radius: 8px;
-}
-
-figcaption {
-  margin-top: 10px;
-  font-size: 16px;
-  font-style: italic;
-  color: #757575;
-  text-align: center;
-}
-
-blockquote {
-  margin: 30px 0;
-  padding-left: 20px;
-  border-left: 4px solid #4fc3f7;
-  font-size: 26px;
-  font-style: italic;
+  .hero-title {
+    font-size: 44px;
+  }
 }
